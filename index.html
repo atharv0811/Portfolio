@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mobile.css"/>
+    <script src="https://kit.fontawesome.com/e3e03c0652.js" crossorigin="anonymous"></script>
+    <title>Atharv Karnekar | Web Developer</title>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Web Developer</p>
+          <h1>Hi, I'm <span>Atharv</span><br />Karnekar From India</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------About---------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.png" />
+          </div>
+
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ut
+              impedit suscipit eius delectus doloribus aliquam hic explicabo.
+              Dicta nulla facere molestias commodi reiciendis officia dolorum
+              eligendi libero cupiditate aspernatur ab tenetur eos praesentium
+              optio in nihil quos impedit saepe ad, laborum facilis incidunt eum
+              animi. Laudantium praesentium vero nam.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App Interfaces</li>
+                <li><span>Web Development</span><br />Web app Development</li>
+                <li><span>App Development</span><br />Building Android/iOS Apps</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Fresher</span><br />Looking for a Web Development Job
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2023</span><br />BCA(Science) from Modern College, Pune
+                </li>
+                <li>
+                  <span>2020</span><br />HSC from A. I. J. Jr. College, Mhasala
+                </li>
+                <li>
+                  <span>2018</span><br />SSC from R. N. Raut High School, Shriwardhan
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------Services---------- -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              tempora architecto labore recusandae hic non eligendi eum impedit!
+              Nostrum temporibus quaerat omnis dolorem rem eveniet voluptatibus
+              et illum praesentium quos!
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              tempora architecto labore recusandae hic non eligendi eum impedit!
+              Nostrum temporibus quaerat omnis dolorem rem eveniet voluptatibus
+              et illum praesentium quos!
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              tempora architecto labore recusandae hic non eligendi eum impedit!
+              Nostrum temporibus quaerat omnis dolorem rem eveniet voluptatibus
+              et illum praesentium quos!
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------Portfolio---------- -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png">
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quas id ipsa veniam suscipit tenetur delectus impedit ex. Blanditiis, unde?</p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/work-2.png">
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quas id ipsa veniam suscipit tenetur delectus impedit ex. Blanditiis, unde?</p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/work-3.png">
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quas id ipsa veniam suscipit tenetur delectus impedit ex. Blanditiis, unde?</p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-- ----------Contact---------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-envelope"></i> karnekaratharv12@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 9370755714</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="images/CV.pdf" download class="btn btn-2" target="_blank">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn-2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &#169; Atharv. | All Rights Reserved</p>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

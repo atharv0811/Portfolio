@@ -13,19 +13,25 @@ export const projects: Project[] = [
     slug: "saas-analytics-dashboard",
     title: "SaaS Analytics Dashboard",
     category: "SaaS Dashboard",
+    tag: "Personal Project",
     description:
-      "A data-dense analytics workspace with filterable reports, saved views and role-aware navigation.",
+      "A modern SaaS analytics dashboard built with Next.js, TypeScript and Tailwind CSS, featuring responsive dashboards, revenue analytics, customer management, transaction tracking, charts, filtering, forms and dark mode.",
     year: "2025",
     role: "Frontend Developer",
     timeline: "Placeholder · e.g. 10 weeks",
-    isPlaceholder: true,
-    technologies: ["Next.js", "TypeScript", "React Query", "Tailwind CSS", "Recharts"],
-    image: "/images/projects/project-1.webp",
+    isPlaceholder: false,
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Recharts", "Zustand"],
+    image: "/images/projects/project-1.png",
     visual: "analytics",
     gallery: [
-      { src: "/images/projects/project-1-overview.webp", alt: "Analytics overview screen", caption: "Overview with KPI cards and trend chart" },
+      { src: "/images/projects/project-1.png", alt: "Dashboard overview with KPI cards, revenue chart and revenue by plan", caption: "Overview with KPI cards, revenue trend and plan breakdown" },
       { src: "/images/projects/project-1-reports.webp", alt: "Reports table with filters", caption: "Reports table with saved filters" },
     ],
+    // TODO: replace with the real deployment and repository URLs.
+    links: {
+      live: "https://saas-analytics-dashboard-flame.vercel.app",
+      repository: "https://github.com/atharv0811/SAAS_Analytics_Dashboard",
+    },
     overview:
       "An analytics product for operations teams who needed to explore business metrics without exporting spreadsheets. The frontend had to make large datasets feel fast and understandable on desktop and usable on tablets.",
     responsibilities: [

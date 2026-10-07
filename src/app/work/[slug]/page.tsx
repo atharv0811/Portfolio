@@ -15,6 +15,7 @@ import {
 } from "@/components/case-study/case-study-blocks";
 import { CaseStudyToc, type TocItem } from "@/components/case-study/case-study-toc";
 import { NextProject } from "@/components/case-study/next-project";
+import { ProjectLinks } from "@/components/projects/project-links";
 import { ProjectMedia } from "@/components/projects/project-media";
 import { Badge, TechList } from "@/components/ui/badge";
 import { ButtonArrow, ButtonLink } from "@/components/ui/button";
@@ -111,10 +112,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
           <div className="mt-10 flex flex-wrap items-center gap-2">
             <Badge variant="primary">{project.category}</Badge>
+            {project.tag ? <Badge variant="outline">{project.tag}</Badge> : null}
             <Badge>{project.year}</Badge>
           </div>
           <TextReveal as="h1" immediate text={project.title} className="mt-5 max-w-4xl text-display" />
           <p className="mt-6 max-w-2xl text-pretty text-lead text-muted-foreground">{project.description}</p>
+          <ProjectLinks links={project.links} size="md" className="mt-8" />
 
           <dl className="mt-12 grid grid-cols-2 gap-x-4 gap-y-6 border-y border-border py-6 lg:grid-cols-4">
             {meta.map((item) => (

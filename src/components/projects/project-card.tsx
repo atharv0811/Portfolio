@@ -1,9 +1,10 @@
-import { ArrowUpRight } from "lucide-react";
+// import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { PlaceholderBadge, TechList } from "@/components/ui/badge";
+import { Badge, PlaceholderBadge, TechList } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
 import { ProjectCardMotion } from "./project-card-motion";
+import { ProjectLinks } from "./project-links";
 import { ProjectMedia } from "./project-media";
 
 export type ProjectCardLayout = "featured" | "featured-reverse" | "compact";
@@ -54,7 +55,13 @@ export function ProjectCard({ project, index, layout = "compact", headingLevel: 
           <span>{project.category}</span>
           <span aria-hidden="true">·</span>
           <span>{project.year}</span>
-          {project.isPlaceholder ? <PlaceholderBadge className="ml-1" /> : null}
+          {project.isPlaceholder ? (
+            <PlaceholderBadge className="ml-1" />
+          ) : project.tag ? (
+            <Badge variant="primary" className="ml-1">
+              {project.tag}
+            </Badge>
+          ) : null}
         </div>
 
         <Heading
@@ -71,15 +78,23 @@ export function ProjectCard({ project, index, layout = "compact", headingLevel: 
         </p>
 
         <div data-reveal-text>
-          <TechList items={project.technologies.slice(0, featured ? 5 : 4)} className="mt-6" />
+          <TechList items={project.technologies.slice(0, featured ? 7 : 4)} className="mt-6" />
         </div>
 
+        {/* Hidden for now — restore along with the ArrowUpRight import.
         <span data-reveal-text className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium" aria-hidden="true">
           View Case Study
           <span data-hover-arrow className="inline-flex text-primary-strong">
             <ArrowUpRight className="size-4" />
           </span>
         </span>
+        */}
+
+        {project.links?.live || project.links?.repository ? (
+          <div data-reveal-text className="relative z-10 mt-6">
+            <ProjectLinks links={project.links} />
+          </div>
+        ) : null}
       </div>
     </ProjectCardMotion>
   );

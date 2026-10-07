@@ -49,6 +49,8 @@ export type Project = {
   slug: string;
   title: string;
   category: string;
+  /** Optional label shown as a badge on the card and case study, e.g. "Personal Project". */
+  tag?: string;
   /** One-sentence summary used on cards and in metadata. */
   description: string;
   year: string;

@@ -1,13 +1,5 @@
 import type { Project } from "@/types";
 
-/**
- * SAMPLE PROJECTS — every entry below is placeholder content that describes the kind of
- * work this portfolio is meant to show. Replace each with a real project (or delete it)
- * and set `isPlaceholder: false`. The UI labels placeholder projects automatically.
- *
- * Order matters: the home page layout uses index 0 and 3 as wide "featured" rows and
- * index 1 + 2 as a two-column pair.
- */
 export const projects: Project[] = [
   {
     slug: "saas-analytics-dashboard",
@@ -15,327 +7,567 @@ export const projects: Project[] = [
     category: "SaaS Dashboard",
     tag: "Personal Project",
     description:
-      "A modern SaaS analytics dashboard built with Next.js, TypeScript and Tailwind CSS, featuring responsive dashboards, revenue analytics, customer management, transaction tracking, charts, filtering, forms and dark mode.",
-    year: "2025",
+      "A modern SaaS analytics dashboard built with Next.js, TypeScript and Tailwind CSS, featuring revenue analytics, customer insights, transaction management, interactive charts, filtering, responsive layouts and dark mode.",
+    year: "2026",
     role: "Frontend Developer",
-    timeline: "Placeholder · e.g. 10 weeks",
+    timeline: "4 weeks",
     isPlaceholder: false,
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Recharts", "Zustand"],
-    image: "/images/projects/project-1.png",
-    visual: "analytics",
-    gallery: [
-      { src: "/images/projects/project-1.png", alt: "Dashboard overview with KPI cards, revenue chart and revenue by plan", caption: "Overview with KPI cards, revenue trend and plan breakdown" },
-      { src: "/images/projects/project-1-reports.webp", alt: "Reports table with filters", caption: "Reports table with saved filters" },
+
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "Zustand",
     ],
-    // TODO: replace with the real deployment and repository URLs.
+
+    image: "/images/projects/saas-dashboard.png",
+    visual: "analytics",
+
+    gallery: [
+      {
+        src: "/images/projects/saas-dashboard-1.png",
+        alt: "SaaS analytics dashboard with KPI cards, charts and revenue analytics",
+        caption:
+          "Analytics overview with KPI cards, revenue trends and performance insights",
+      },
+      {
+        src: "/images/projects/saas-dashboard-2.png",
+        alt: "SaaS analytics reports table with filters and transaction data",
+        caption: "Data-rich reports with filtering, sorting and pagination",
+      },
+    ],
+
     links: {
       live: "https://saas-analytics-dashboard-flame.vercel.app",
       repository: "https://github.com/atharv0811/SAAS_Analytics_Dashboard",
     },
+
     overview:
-      "An analytics product for operations teams who needed to explore business metrics without exporting spreadsheets. The frontend had to make large datasets feel fast and understandable on desktop and usable on tablets.",
+      "A modern analytics platform designed to give SaaS teams a centralized view of revenue, customers, transactions and business performance through a clean and responsive dashboard experience.",
+
     responsibilities: [
-      "Built the dashboard shell, navigation and layout system",
-      "Implemented the report table with server-side pagination, sorting and filters",
-      "Integrated REST endpoints with React Query, including caching and background refresh",
-      "Collaborated with design on chart states, empty states and responsive behaviour",
+      "Designed and built the complete dashboard interface and application shell",
+      "Implemented responsive analytics dashboards with reusable UI components",
+      "Built revenue, customer and transaction views with interactive charts and data tables",
+      "Implemented filtering, search, sorting and pagination experiences",
+      "Created reusable forms and UI patterns using shadcn/ui",
+      "Implemented dark mode and responsive behaviour across the application",
     ],
+
     challenge:
-      "Users were switching between multiple tools to answer simple questions. The existing screens loaded every record at once, filters reset on navigation and charts had no meaningful loading or empty states.",
+      "The goal was to design a data-heavy SaaS dashboard that could present business metrics clearly without overwhelming users. The interface needed to balance information density, visual hierarchy and responsive behaviour across different screen sizes.",
+
     challenges: [
-      { title: "Large datasets", description: "Reports could return thousands of rows, so rendering everything on the client was not an option." },
-      { title: "Shareable state", description: "Filters and date ranges needed to survive refreshes and be shareable as links." },
-      { title: "Consistent states", description: "Every widget needed predictable loading, empty and error states." },
+      {
+        title: "Information density",
+        description:
+          "Multiple KPIs, charts, tables and filters needed to fit into a clear hierarchy without making the dashboard feel cluttered.",
+      },
+      {
+        title: "Responsive analytics",
+        description:
+          "Charts, tables and dashboard cards needed to remain useful and readable across desktop, tablet and mobile layouts.",
+      },
+      {
+        title: "Consistent UI",
+        description:
+          "Different pages needed to share the same visual language, spacing, components and interaction patterns.",
+      },
     ],
+
     solution:
-      "Filters were moved into the URL, data fetching was centralised in typed React Query hooks, and the report table was rebuilt around server-side pagination with a virtualised body for long pages.",
+      "The dashboard was structured around reusable components, consistent spacing and typography, responsive layouts, interactive data visualizations and clear loading, empty and error states. Shared UI primitives were used to keep the experience consistent across analytics, customers, transactions and settings.",
+
     features: [
-      "URL-synced filters and date ranges",
-      "Saved views per user",
-      "Server-side paginated report table",
-      "Skeleton, empty and error states for every widget",
-      "Role-aware navigation",
+      "Analytics dashboard with KPI cards and revenue visualizations",
+      "Revenue, MRR, customer and conversion analytics",
+      "Customer management with search and filtering",
+      "Transaction management with filtering and pagination",
+      "Interactive charts using Recharts",
+      "Responsive data tables and dashboard layouts",
+      "Settings and profile management forms",
+      "Dark mode",
+      "Loading, empty and error states",
     ],
+
     architecture: [
-      { title: "App shell", description: "Next.js App Router layouts for the sidebar, header and nested report routes." },
-      { title: "Data layer", description: "Typed API client plus React Query hooks per resource, with shared query keys." },
-      { title: "State", description: "URL search params as the source of truth for filters; local UI state stays in components." },
-      { title: "UI kit", description: "Small set of composable primitives — table, card, filter bar, chart frame." },
+      {
+        title: "Application shell",
+        description:
+          "Next.js App Router layouts provide the shared sidebar, header and responsive navigation structure.",
+      },
+      {
+        title: "UI system",
+        description:
+          "Reusable shadcn/ui components provide consistent cards, buttons, dialogs, forms, tables and navigation patterns.",
+      },
+      {
+        title: "State management",
+        description:
+          "Zustand is used for client-side UI state while page-level data is kept separate from presentation components.",
+      },
+      {
+        title: "Data visualization",
+        description:
+          "Recharts provides reusable chart components for revenue, customer and performance analytics.",
+      },
     ],
+
     uxDecisions: [
-      { title: "Filters stay visible", description: "A sticky filter bar keeps context while scrolling long reports." },
-      { title: "Numbers first", description: "KPI cards lead with the value and change, with detail available on hover or tap." },
-      { title: "Calm density", description: "Tight spacing in tables, generous spacing around them, so dense data stays readable." },
+      {
+        title: "Numbers first",
+        description:
+          "Important business metrics are presented first through compact KPI cards before deeper analytics.",
+      },
+      {
+        title: "Clear visual hierarchy",
+        description:
+          "Spacing, typography and card grouping separate primary metrics from supporting information.",
+      },
+      {
+        title: "Responsive by default",
+        description:
+          "Dashboard layouts adapt instead of simply shrinking desktop components for smaller screens.",
+      },
     ],
+
     implementation: [
-      { title: "Typed query hooks", description: "Each endpoint has a hook that owns its query key, parsing and stale time." },
-      { title: "Virtualised rows", description: "Only visible table rows are rendered, keeping scroll smooth on long pages." },
-      { title: "Prefetching", description: "The next page of results is prefetched when the user nears the end of the current page." },
+      {
+        title: "Reusable dashboard components",
+        description:
+          "Common cards, tables, charts, filters and layout components are shared across multiple screens.",
+      },
+      {
+        title: "Interactive charts",
+        description:
+          "Chart components provide tooltips and responsive visualizations for understanding business trends.",
+      },
+      {
+        title: "Consistent form patterns",
+        description:
+          "Forms use reusable validation and UI patterns to keep user interactions predictable.",
+      },
     ],
+
     codeSample: {
-      filename: "use-report.ts",
-      code: `export function useReport(filters: ReportFilters) {
-  return useQuery({
-    queryKey: reportKeys.list(filters),
-    queryFn: ({ signal }) => api.reports.list(filters, { signal }),
-    placeholderData: keepPreviousData,
-    staleTime: 60_000,
-  });
+      filename: "dashboard-overview.tsx",
+      code: `export function DashboardOverview() {
+  return (
+    <div className="grid gap-6">
+      <KpiCards />
+      <RevenueChart />
+      <RecentTransactions />
+    </div>
+  );
 }`,
     },
+
     responsive: [
-      "Sidebar collapses to a bottom sheet on tablets and phones",
-      "Tables switch to stacked rows below 768px with the most important columns first",
-      "Charts reduce tick density on narrow screens instead of shrinking text",
+      "Sidebar navigation adapts for smaller screens",
+      "Dashboard cards reflow based on available space",
+      "Charts resize while maintaining readable labels",
+      "Tables adapt their layout for smaller screens",
     ],
+
     performance: [
-      "Server-side pagination instead of loading full datasets",
-      "Previous results stay visible while new filters load to avoid layout jumps",
-      "Charts are code-split and loaded only on routes that use them",
+      "Reusable components reduce duplicated UI logic",
+      "Charts are isolated into focused components",
+      "Responsive layouts avoid unnecessary client-side complexity",
+      "Dashboard sections are structured to keep rendering predictable",
     ],
+
     outcome: [
-      "Placeholder: describe the real result, e.g. what users could now do that they couldn't before",
-      "Placeholder: qualitative feedback from the team or stakeholders",
-      "Placeholder: a verified metric, only if you can back it up",
+      "Created a polished SaaS analytics experience suitable for demonstrating modern frontend development skills.",
+      "Demonstrates the ability to design and implement data-heavy dashboards with reusable components and responsive layouts.",
+      "Provides a strong showcase of Next.js, TypeScript, Tailwind CSS, component architecture and data visualization.",
     ],
+
     learnings: [
-      "Treating the URL as state simplifies more than just sharing links",
-      "Designing empty and error states early prevents late redesigns",
+      "Good dashboard design is primarily about hierarchy and information density rather than adding more visual elements.",
+      "Reusable UI patterns make large dashboard interfaces easier to maintain and keep visually consistent.",
+      "Responsive behaviour needs to be considered at the component level rather than added as a final step.",
     ],
   },
+
   {
-    slug: "customer-portal",
-    title: "Customer Self-Service Portal",
-    category: "Customer Portal",
+    slug: "project-task-management-platform",
+    title: "Project & Task Management Platform",
+    category: "Productivity Platform",
+    tag: "Personal Project",
     description:
-      "A self-service portal where customers track requests, manage invoices and update account details.",
-    year: "2025",
+      "A modern project and task management platform for organizing projects, workflows, sprints and tasks, with Kanban boards, real-time collaboration, rich-text editing, role-based access and responsive team workflows.",
+    year: "2026",
     role: "Frontend Developer",
-    timeline: "Placeholder · e.g. 8 weeks",
-    isPlaceholder: true,
-    technologies: ["React", "TypeScript", "Redux Toolkit", "Axios", "Tailwind CSS"],
+    timeline: "6 weeks",
+    isPlaceholder: false,
+
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Radix UI",
+      "React Hook Form",
+      "Zod",
+      "dnd-kit",
+      "Tiptap",
+      "Socket.IO",
+    ],
+
     image: "/images/projects/project-2.webp",
-    visual: "portal",
-    gallery: [
-      { src: "/images/projects/project-2-requests.webp", alt: "Customer requests list", caption: "Request tracking with status timeline" },
-      { src: "/images/projects/project-2-billing.webp", alt: "Billing and invoices screen", caption: "Billing and invoice history" },
-    ],
-    overview:
-      "A customer-facing portal that reduces support emails by letting customers see the status of their requests, download invoices and manage their own account details.",
-    responsibilities: [
-      "Implemented authentication flows and protected routes",
-      "Built request tracking with a status timeline and comments",
-      "Created reusable form components with validation and inline errors",
-      "Handled API error mapping into user-friendly messages",
-    ],
-    challenge:
-      "Customers relied on email for every status update. The portal needed to feel trustworthy and simple for non-technical users while handling session expiry, permissions and many form flows.",
-    challenges: [
-      { title: "Session handling", description: "Expired sessions had to be handled without losing what the user was typing." },
-      { title: "Many forms", description: "Dozens of forms needed consistent validation, errors and submission states." },
-      { title: "Trust", description: "Billing information needed clarity and zero ambiguity." },
-    ],
-    solution:
-      "A shared form system standardised validation and error display, an Axios interceptor handled token refresh transparently, and a status timeline replaced long email threads with a single source of truth.",
-    features: [
-      "Login, password reset and protected routes",
-      "Request tracking with status timeline",
-      "Invoice list with download links",
-      "Profile and notification preferences",
-    ],
-    architecture: [
-      { title: "Routing", description: "Public and authenticated route groups with a guarded layout." },
-      { title: "API client", description: "Axios instance with interceptors for auth headers, refresh and error normalisation." },
-      { title: "State", description: "Redux Toolkit for session and user preferences; server data fetched per screen." },
-      { title: "Forms", description: "Reusable field components that share labels, hints and error semantics." },
-    ],
-    uxDecisions: [
-      { title: "Status in plain language", description: "Internal ticket states were mapped to customer-friendly labels." },
-      { title: "Inline validation", description: "Errors appear next to the field after the user leaves it, not while typing." },
-      { title: "Clear next steps", description: "Every request shows what happens next and who is responsible." },
-    ],
-    implementation: [
-      { title: "Token refresh queue", description: "Concurrent requests wait for a single refresh instead of triggering several." },
-      { title: "Error normalisation", description: "API errors are converted into one typed shape the UI can render consistently." },
-      { title: "Accessible forms", description: "Labels, descriptions and errors are linked with proper ARIA attributes." },
-    ],
-    codeSample: {
-      filename: "api-client.ts",
-      code: `api.interceptors.response.use(undefined, async (error) => {
-  if (error.response?.status !== 401) throw normalizeError(error);
-  await refreshSession(); // shared promise — one refresh at a time
-  return api.request(error.config);
-});`,
-    },
-    responsive: [
-      "Mobile-first layouts — most customers open the portal from email on their phone",
-      "Tables become cards on small screens",
-      "Large touch targets for primary actions",
-    ],
-    performance: [
-      "Route-level code splitting for rarely used settings screens",
-      "Optimistic UI for comment posting",
-      "Requests cancelled when users navigate away",
-    ],
-    outcome: [
-      "Placeholder: describe how customers or the support team benefited",
-      "Placeholder: note any feedback received after launch",
-    ],
-    learnings: [
-      "Consistent form patterns save more time than any single component",
-      "Error messages are part of the product's tone of voice",
-    ],
-  },
-  {
-    slug: "property-management-console",
-    title: "Property Management Console",
-    category: "Property Management",
-    description:
-      "An operations console for managing units, tenants, maintenance requests and payments in one place.",
-    year: "2024",
-    role: "Frontend Developer",
-    timeline: "Placeholder · e.g. 12 weeks",
-    isPlaceholder: true,
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    image: "/images/projects/project-3.webp",
-    visual: "property",
-    gallery: [
-      { src: "/images/projects/project-3-units.webp", alt: "Units overview grid", caption: "Units overview with occupancy status" },
-      { src: "/images/projects/project-3-maintenance.webp", alt: "Maintenance requests board", caption: "Maintenance requests by priority" },
-    ],
-    overview:
-      "An internal console for property managers to see occupancy, handle maintenance requests and track payments, replacing a mix of spreadsheets and messaging apps.",
-    responsibilities: [
-      "Built the units, tenants and maintenance modules",
-      "Designed reusable status badges, filters and detail drawers",
-      "Worked on Prisma queries and API routes for the modules I built",
-      "Implemented role-based visibility for managers and staff",
-    ],
-    challenge:
-      "Managers needed to answer \"what needs attention today?\" quickly. Information was spread across tools and nothing showed priorities clearly.",
-    challenges: [
-      { title: "Prioritisation", description: "Urgent maintenance requests had to stand out without making the UI noisy." },
-      { title: "Relational data", description: "Units, tenants, leases and payments are deeply connected." },
-      { title: "Roles", description: "Staff should only see and edit what is relevant to them." },
-    ],
-    solution:
-      "A \"today\" overview surfaces urgent items first, detail drawers keep users in context instead of navigating away, and server components fetch relational data close to the database.",
-    features: [
-      "Occupancy overview",
-      "Maintenance requests with priority and assignee",
-      "Tenant and lease details in side drawers",
-      "Payment status tracking",
-    ],
-    architecture: [
-      { title: "Server-first pages", description: "Server Components query data via Prisma and stream to the client." },
-      { title: "Client islands", description: "Only filters, drawers and forms are client components." },
-      { title: "Mutations", description: "Server actions with validation, followed by targeted revalidation." },
-      { title: "Access control", description: "Role checks in the data layer, mirrored in the UI." },
-    ],
-    uxDecisions: [
-      { title: "Drawers over pages", description: "Details open in a drawer so the list context is never lost." },
-      { title: "Status colour system", description: "A small, consistent palette for status — always paired with text." },
-      { title: "Today view", description: "The default screen answers what needs attention now." },
-    ],
-    implementation: [
-      { title: "Streaming", description: "Slow sections stream in with skeletons while the page shell renders immediately." },
-      { title: "Typed queries", description: "Prisma types flow to components, catching shape changes at compile time." },
-      { title: "Revalidation", description: "Mutations revalidate only the affected routes." },
-    ],
-    responsive: [
-      "Drawers become full-screen sheets on phones",
-      "Overview cards reflow from four columns to one",
-      "Filters collapse into a single sheet on small screens",
-    ],
-    performance: [
-      "Less client JavaScript by keeping data-heavy views on the server",
-      "Streaming with Suspense boundaries per section",
-      "Pagination for tenant and payment lists",
-    ],
-    outcome: [
-      "Placeholder: describe how the team's workflow changed",
-      "Placeholder: qualitative feedback from property managers",
-    ],
-    learnings: [
-      "Server Components simplify data-heavy internal tools",
-      "Status colours need text labels to be accessible and unambiguous",
-    ],
-  },
-  {
-    slug: "team-task-workspace",
-    title: "Team Task Workspace",
-    category: "Productivity Application",
-    description:
-      "A collaborative task board with drag-and-drop columns, keyboard shortcuts and real-time-ready architecture.",
-    year: "2024",
-    role: "Frontend Developer",
-    timeline: "Placeholder · e.g. 6 weeks",
-    isPlaceholder: true,
-    technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
-    image: "/images/projects/project-4.webp",
     visual: "workspace",
+
+    // links: {
+    //   live: "https://saas-analytics-dashboard-flame.vercel.app",
+    //   repository: "https://github.com/atharv0811/SAAS_Analytics_Dashboard",
+    // },
+
     gallery: [
-      { src: "/images/projects/project-4-board.webp", alt: "Kanban task board", caption: "Board view with columns and task cards" },
-      { src: "/images/projects/project-4-task.webp", alt: "Task detail panel", caption: "Task details with checklist and activity" },
+      {
+        src: "/images/projects/project-2-board.webp",
+        alt: "Project management board with workflow columns and task cards",
+        caption: "Kanban board with drag-and-drop workflow management",
+      },
+      {
+        src: "/images/projects/project-2-task.webp",
+        alt: "Task detail panel with rich-text description and activity",
+        caption: "Task details with rich-text content and activity",
+      },
     ],
+
     overview:
-      "A productivity tool for small teams to plan work on a board, with fast keyboard-driven interactions and a clean, focused interface.",
+      "A collaborative workspace where teams can organize projects, manage tasks through customizable workflows, plan sprints, write rich-text notes and stay synchronized through real-time updates.",
+
     responsibilities: [
-      "Built the board, columns and task card components",
-      "Implemented drag-and-drop with keyboard alternatives",
-      "Created the Express API and MongoDB models for tasks and boards",
-      "Added optimistic updates for moving and editing tasks",
+      "Built the application shell, routing and workspace navigation with React Router",
+      "Implemented Kanban boards and drag-and-drop interactions with dnd-kit",
+      "Created typed data hooks using TanStack Query and client-side state with Zustand",
+      "Built validated forms using React Hook Form, Zod and reusable shadcn/ui components",
+      "Integrated Tiptap for rich-text task and project content",
+      "Integrated Socket.IO for real-time updates across connected users",
     ],
+
     challenge:
-      "Task tools often feel slow and cluttered. The goal was a board that responds instantly and stays usable with a keyboard alone.",
+      "The platform needed to support complex project workflows while keeping the interface simple and responsive. Users needed to move tasks quickly, manage large amounts of work, edit detailed task information and stay synchronized with other collaborators.",
+
     challenges: [
-      { title: "Instant feedback", description: "Moving a task should never wait for the network." },
-      { title: "Accessible drag-and-drop", description: "Every drag interaction needed a keyboard equivalent." },
-      { title: "Ordering", description: "Task order had to stay consistent across clients." },
+      {
+        title: "Real-time collaboration",
+        description:
+          "Changes from other users needed to appear quickly while avoiding unnecessary refetches or disrupting the current user's workflow.",
+      },
+      {
+        title: "Drag-and-drop workflows",
+        description:
+          "Tasks needed to move between workflow columns smoothly while maintaining a responsive and predictable interaction.",
+      },
+      {
+        title: "Complex forms",
+        description:
+          "Projects, tasks, members and workflow settings required consistent validation and error handling.",
+      },
     ],
+
     solution:
-      "Optimistic updates with rollback on failure, fractional ordering keys for stable task positions, and a command-style keyboard layer for common actions.",
+      "The application separates server state and client UI state using TanStack Query and Zustand, while Socket.IO keeps connected users synchronized. dnd-kit powers interactive Kanban workflows, and shared React Hook Form with Zod validation keeps forms consistent across the platform.",
+
     features: [
-      "Drag-and-drop board with keyboard support",
-      "Task details with checklist and comments",
-      "Keyboard shortcuts for create, move and search",
-      "Filters by assignee and label",
+      "Workspace and project management",
+      "Custom project workflow columns",
+      "Drag-and-drop Kanban boards",
+      "Sprint and task management",
+      "Task details with rich-text descriptions",
+      "Task assignees, due dates and labels",
+      "Real-time updates across connected users",
+      "Search and project-level filtering",
+      "Progress tracking",
+      "Role-based access and team management",
     ],
+
     architecture: [
-      { title: "Client", description: "React with feature-based folders and a small shared UI kit." },
-      { title: "API", description: "Express REST API with validation middleware." },
-      { title: "Data", description: "MongoDB documents for boards and tasks with fractional order keys." },
-      { title: "Sync-ready", description: "State updates are modelled as events so real-time sync can be added later." },
+      {
+        title: "Application shell",
+        description:
+          "Vite and React Router provide nested layouts for workspace, project and task-level routes.",
+      },
+      {
+        title: "Server state",
+        description:
+          "TanStack Query manages API data, caching, mutations and optimistic updates.",
+      },
+      {
+        title: "Client state",
+        description:
+          "Zustand manages UI-focused state such as active workspace, panels and board preferences.",
+      },
+      {
+        title: "Real-time layer",
+        description:
+          "Socket.IO events update the relevant cached data instead of triggering unnecessary full refetches.",
+      },
     ],
+
     uxDecisions: [
-      { title: "Keyboard first", description: "Every common action is reachable without the mouse." },
-      { title: "Quiet cards", description: "Cards show only title, assignee and due date until opened." },
-      { title: "Undo over confirm", description: "Destructive actions offer undo instead of blocking dialogs." },
+      {
+        title: "Stay in context",
+        description:
+          "Task details open in a panel so users can inspect and edit tasks without losing their board or list context.",
+      },
+      {
+        title: "Instant feedback",
+        description:
+          "Task moves and edits provide immediate visual feedback while failed operations can be rolled back.",
+      },
+      {
+        title: "Consistent interactions",
+        description:
+          "Shared UI primitives provide predictable dialogs, menus, forms and interaction patterns across the application.",
+      },
     ],
+
     implementation: [
-      { title: "Optimistic mutations", description: "UI updates instantly and rolls back with a message if the request fails." },
-      { title: "Fractional ordering", description: "New positions are calculated between neighbours, avoiding full re-sorts." },
-      { title: "Focus management", description: "Focus follows moved cards so keyboard users never lose their place." },
+      {
+        title: "Optimistic updates",
+        description:
+          "Task movements update the UI immediately and synchronize with the server in the background.",
+      },
+      {
+        title: "Schema-driven forms",
+        description:
+          "Zod schemas provide consistent validation and typed form behaviour across the application.",
+      },
+      {
+        title: "Cache-aware real-time updates",
+        description:
+          "Incoming Socket.IO events update relevant TanStack Query data without requiring full page refreshes.",
+      },
     ],
+
+    codeSample: {
+      filename: "use-task-sync.ts",
+      code: `export function useTaskSync(projectId: string) {
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    const onUpdate = (task: Task) => {
+      queryClient.setQueryData<Task[]>(
+        taskKeys.list(projectId),
+        (tasks = []) =>
+          tasks.map((item) =>
+            item.id === task.id ? task : item
+          )
+      );
+    };
+
+    socket.on("task:updated", onUpdate);
+
+    return () => {
+      socket.off("task:updated", onUpdate);
+    };
+  }, [projectId, queryClient]);
+}`,
+    },
+
     responsive: [
-      "Columns scroll horizontally with snap points on phones",
-      "Task details open as a full-screen sheet on small screens",
-      "Touch-friendly drag handles",
+      "Kanban boards support horizontal scrolling on smaller screens",
+      "Task details become full-screen sheets on mobile",
+      "Sidebar navigation collapses into a mobile drawer",
+      "Layouts adapt across desktop, tablet and mobile breakpoints",
     ],
+
     performance: [
-      "Memoised card components to avoid re-rendering whole columns",
-      "Debounced search",
-      "Lean dependency footprint",
+      "Optimistic updates keep task interactions responsive",
+      "Socket events update cached data instead of triggering unnecessary refetches",
+      "Route-level code splitting reduces the initial application bundle",
+      "The rich-text editor is loaded only where required",
     ],
+
     outcome: [
-      "Placeholder: summarise what the project demonstrates or how it is used",
-      "Placeholder: link to a live demo or repository if available",
+      "Created a substantial project management experience demonstrating complex frontend workflows and SaaS application architecture.",
+      "Brings project planning, task management, collaboration and workflow tracking into a single interface.",
+      "Demonstrates practical experience with state management, real-time updates, drag-and-drop interactions and complex form workflows.",
     ],
+
     learnings: [
-      "Optimistic UI needs a clear failure story",
-      "Accessible drag-and-drop is mostly about focus management",
+      "Separating server state from UI state makes complex applications easier to reason about.",
+      "Optimistic updates can make collaborative workflows feel significantly more responsive.",
+      "Real-time events can be integrated cleanly by updating cached server state rather than refetching entire resources.",
+      "Consistent validation schemas reduce duplication across complex forms.",
     ],
   },
+
+  {
+  slug: "react-nextjs-bug-fix-lab",
+  title: "React & Next.js Bug Fix Lab",
+  category: "Frontend Engineering",
+  description:
+    "An interactive debugging lab demonstrating common React and Next.js bugs, their root causes, practical fixes and verification steps.",
+  year: "2026",
+  role: "Frontend Developer",
+  timeline: "2 days",
+  isPlaceholder: false,
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Lucide React",
+  ],
+  image: "/images/projects/project-3.png",
+  visual: "debugging",
+  gallery: [
+    {
+      src: "/images/projects/project-3.1.png",
+      alt: "Bug Fix Lab homepage with debugging case cards",
+      caption: "Browse frontend debugging cases by category and difficulty",
+    },
+    {
+      src: "/images/projects/project-3.2.png",
+      alt: "Debugging case detail with root cause and solution",
+      caption: "Understand the issue, investigate the cause and verify the fix",
+    },
+  ],
+  overview:
+    "An interactive educational project that demonstrates common frontend bugs through structured case studies. Each case guides developers from reproducing a problem to understanding its root cause, applying a fix and verifying the result.",
+
+  responsibilities: [
+    "Designed and developed the debugging lab interface",
+    "Built reusable case cards, filters and case detail layouts",
+    "Implemented interactive demonstrations for frontend debugging scenarios",
+    "Documented symptoms, reproduction steps, root causes and fixes",
+    "Added responsive layouts and accessible form-validation examples",
+  ],
+
+  challenge:
+    "Frontend bug fixes are often presented as code snippets without explaining how to reproduce the issue, identify its root cause or verify the solution.",
+
+  challenges: [
+    {
+      title: "Reproducing bugs",
+      description:
+        "Each case needed a clear, repeatable way to understand the problem before attempting a fix.",
+    },
+    {
+      title: "Explaining root causes",
+      description:
+        "The lab needed to explain why a bug occurs rather than simply showing replacement code.",
+    },
+    {
+      title: "Verifying solutions",
+      description:
+        "Each case needed a practical way to understand whether the proposed fix addresses the original issue.",
+    },
+  ],
+
+  solution:
+    "Created a structured debugging workflow with symptoms, reproduction steps, interactive or simulated demonstrations, investigation notes, root-cause explanations, fixes and verification guidance.",
+
+  features: [
+    "Six frontend debugging case studies",
+    "Search, category and difficulty filters",
+    "Interactive demonstrations for selected bugs",
+    "Step-by-step investigation and root-cause explanations",
+    "Before-and-after fixes with verification guidance",
+    "Related cases and previous/next navigation",
+    "Responsive interface for desktop and mobile",
+  ],
+
+  architecture: [
+    {
+      title: "Reusable case structure",
+      description:
+        "Organized debugging cases into consistent sections for symptoms, reproduction, investigation, root cause, fix and verification.",
+    },
+    {
+      title: "Interactive demonstrations",
+      description:
+        "Implemented local demonstrations for selected scenarios and clearly identified simulated examples.",
+    },
+    {
+      title: "Component-driven UI",
+      description:
+        "Used reusable layouts and interface components to keep case cards, filters and detail pages consistent.",
+    },
+    {
+      title: "Educational verification",
+      description:
+        "Provided verification steps to help developers understand the expected behavior after applying a fix.",
+    },
+  ],
+
+  uxDecisions: [
+    {
+      title: "Problem-first learning",
+      description:
+        "Every case starts with the symptom and reproduction steps before explaining the solution.",
+    },
+    {
+      title: "Structured debugging workflow",
+      description:
+        "Investigation, root cause, fix and verification are separated into clear sections.",
+    },
+    {
+      title: "Honest demo labels",
+      description:
+        "Live and simulated demonstrations are distinguished so users understand what each example actually runs.",
+    },
+  ],
+
+  implementation: [
+    {
+      title: "Responsive layout debugging",
+      description:
+        "Demonstrates how fixed-width content can cause horizontal overflow and how fluid sizing can resolve it.",
+    },
+    {
+      title: "React state updates",
+      description:
+        "Explains the difference between direct state updates and functional updater patterns.",
+    },
+    {
+      title: "API and form states",
+      description:
+        "Covers loading, error handling, field-level validation and accessible error messaging.",
+    },
+    {
+      title: "Rendering and routing",
+      description:
+        "Explores unnecessary React re-renders and common Next.js routing and rendering concepts.",
+    },
+  ],
+
+  responsive: [
+    "Responsive layouts for different viewport widths",
+    "Flexible case cards and filter controls",
+    "Readable case details on smaller screens",
+  ],
+
+  performance: [
+    "Reusable components to reduce duplicated UI code",
+    "Focused interactive demonstrations for individual debugging scenarios",
+    "Practical explanations of rendering behavior and frontend performance",
+  ],
+
+  outcome: [
+    "Delivered a deployed, interactive educational debugging lab",
+    "Documented six common React and Next.js debugging scenarios",
+    "Created a portfolio project demonstrating frontend problem-solving and technical communication",
+  ],
+
+  learnings: [
+    "Reproducing a bug is an important first step toward finding its root cause",
+    "Understanding state updates and rendering behavior helps prevent subtle React bugs",
+    "Accessible error states improve form usability",
+    "Verification steps make debugging solutions easier to evaluate",
+  ],
+},
 ];
 
 export function getProjectBySlug(slug: string) {

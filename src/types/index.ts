@@ -32,7 +32,7 @@ export type NavItem = {
   sectionId: string;
 };
 
-export type ProjectVisualVariant = "analytics" | "portal" | "property" | "workspace";
+export type ProjectVisualVariant = "analytics" | "portal" | "property" | "workspace" | "debugging";
 
 export type ProjectImage = {
   src: string;

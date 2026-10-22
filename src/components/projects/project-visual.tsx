@@ -194,9 +194,43 @@ function WorkspacePreview() {
   );
 }
 
+function DebuggingPreview() {
+  const cases = [
+    { label: "Easy", tone: "bg-primary-soft text-primary-strong" },
+    { label: "Medium", tone: "bg-accent-soft text-accent-foreground" },
+    { label: "Hard", tone: "bg-surface-muted text-subtle-foreground" },
+  ];
+  return (
+    <div className="grid gap-2">
+      <div className="flex items-center gap-2">
+        <Panel className="flex flex-1 items-center gap-1.5 py-1.5">
+          <span className="size-2 rounded-full border border-border-strong" />
+          <Line className="w-1/3" />
+        </Panel>
+        <span className="rounded bg-primary-soft px-1.5 text-[9px] text-primary-strong">6 cases</span>
+      </div>
+      {cases.map((item) => (
+        <Panel key={item.label} className="flex items-center gap-2">
+          <span className="size-5 rounded bg-surface-muted" />
+          <div className="flex-1 space-y-1">
+            <Line className="w-1/2" />
+            <Line className="w-1/3 bg-surface-muted" />
+          </div>
+          <span className={cn("rounded px-1.5 text-[9px]", item.tone)}>{item.label}</span>
+        </Panel>
+      ))}
+      <Panel className="space-y-1 font-mono text-[9px]">
+        <span className="block text-subtle-foreground line-through">setCount(count + 1)</span>
+        <span className="block text-primary-strong">setCount((c) =&gt; c + 1)</span>
+      </Panel>
+    </div>
+  );
+}
+
 const previews: Record<ProjectVisualVariant, () => ReactNode> = {
   analytics: AnalyticsPreview,
   portal: PortalPreview,
   property: PropertyPreview,
   workspace: WorkspacePreview,
+  debugging: DebuggingPreview,
 };
